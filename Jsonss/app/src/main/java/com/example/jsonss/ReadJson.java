@@ -33,7 +33,7 @@ public class ReadJson{
         JSONObject jsonquestion = jsonRoot.getJSONObject("question");
         String street = jsonquestion.getString("street");
         String city = jsonquestion.getString("city");
-        question question= new question(street, city);
+        question question= new question(street, city,"haha");
 
         Company company = new Company();
         company.setId(id);

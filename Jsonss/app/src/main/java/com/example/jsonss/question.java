@@ -8,9 +8,10 @@ public class question {
 
     }
 
-    public question(String head, String tail) {
+    public question(String head, String tail,String type) {
         this.head = head;
         this.tail = tail;
+        this.type = type;
     }
 
     public String getHead() {
