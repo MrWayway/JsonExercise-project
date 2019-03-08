@@ -18,9 +18,8 @@ public class MainActivity extends AppCompatActivity {
     public void runExample(View view)  {
         try {
 
-            Company company = ReadJson.readCompanyJSONFile(this);
+            outputText.setText(new ReadQuestion().readQuestionJSONFile(this));
 
-            outputText.setText(company.toString());
         } catch(Exception e)  {
             outputText.setText(e.getMessage());
             e.printStackTrace();

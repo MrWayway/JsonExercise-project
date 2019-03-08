@@ -39,6 +39,8 @@ public class question {
 
     @Override
     public String toString() {
-        return "head: " + head + "\ntail: " + tail +"\ntype:" +type;
+        StringBuilder sb= new StringBuilder();
+        sb.append("head: " + head + "\ntail: " + tail +"\ntype:" +type);
+        return sb.toString();
     }
 }

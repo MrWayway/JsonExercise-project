@@ -12,26 +12,25 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class ReadQuestion {
-    public static question[] readCompanyJSONFile(Context context) throws IOException, JSONException {
+    public static String readQuestionJSONFile(Context context) throws IOException, JSONException {
         String jsonText = readText(context, R.raw.question);
         JSONObject jsonRoot = new JSONObject(jsonText);
         JSONArray jsonArray = jsonRoot.getJSONArray("question");
         String[] quest = new String[jsonArray.length()];
-        question[] q = new question[jsonArray.length()];
+        question q = new question();
+        String ret="";
         for(int i=0;i < jsonArray.length();i++) {
             quest[i] = jsonArray.getString(i);
-            JSONObject tempt= new JSONObject(quest[i]);
+            JSONObject tempt = new JSONObject(quest[i]);
             String head = tempt.getString("head");
             String tail = tempt.getString("tail");
             String type = tempt.getString("type");
 
-            q[i].setHead(head);
-            q[i].setTail(tail);
-            q[i].setType(type);
-
+            q.setHead(head);
+            q.setTail(tail);
+            q.setType(type);
         }
-
-        return q;
+        return "haha";
     }
 
 
@@ -47,8 +46,9 @@ public class ReadQuestion {
             sb.append("\n");
         }
         return sb.toString();
+
     }
 
-
 }
+
 

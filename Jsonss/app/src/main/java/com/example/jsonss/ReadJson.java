@@ -14,7 +14,7 @@ public class ReadJson{
     public static Company readCompanyJSONFile(Context context) throws IOException,JSONException {
 
         // Read content of company.json
-        String jsonText = readText(context, R.raw.my);
+        String jsonText = readText(context, R.raw.question);
 
 
         JSONObject jsonRoot = new JSONObject(jsonText);
