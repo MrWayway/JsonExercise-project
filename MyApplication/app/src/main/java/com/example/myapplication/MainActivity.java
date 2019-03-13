@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void runExample()  {
         try {
-            question tempt= new question();
-            question ret = tempt.readfile(this);
+           question ret = new question();
+           ret.readFile(this);
 
             dis.setText(ret.toString());
         } catch(Exception e)  {

@@ -13,16 +13,15 @@ import java.io.InputStreamReader;
 public class question {
     public
     String head,tail,type;
-    public question readfile(Context content ) throws IOException, JSONException
+    public void readFile(Context content ) throws IOException, JSONException
     {
-        question ret = new question();
         String a = readText(content,R.raw.my);
         JSONObject tempt = new JSONObject(a);
-        ret.head = tempt.getString("head");
-        ret.tail = tempt.getString("tail");
-        ret.type = tempt.getString("type");
+        head = tempt.getString("head");
+        tail = tempt.getString("tail");
+        type = tempt.getString("type");
 
-        return ret;
+        return ;
     }
     public String readText(Context context, int resId) throws IOException {
         InputStream is = context.getResources().openRawResource(resId);
