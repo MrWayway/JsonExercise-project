@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public void runExample()  {
         try {
            question ret = new question();
-           ret.readFile(this);
+           ret.set("g","x","y");
 
             dis.setText(ret.toString());
         } catch(Exception e)  {

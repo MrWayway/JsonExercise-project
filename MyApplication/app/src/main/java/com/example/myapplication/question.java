@@ -13,13 +13,12 @@ import java.io.InputStreamReader;
 public class question {
     public
     String head,tail,type;
-    public void readFile(Context content ) throws IOException, JSONException
+    public void set(String x, String y, String z)
     {
-        String a = readText(content,R.raw.my);
-        JSONObject tempt = new JSONObject(a);
-        head = tempt.getString("head");
-        tail = tempt.getString("tail");
-        type = tempt.getString("type");
+
+        head = x;
+        tail = y;
+        type = z;
 
         return ;
     }
