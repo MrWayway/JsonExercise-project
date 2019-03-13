@@ -33,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void runExample()  {
         try {
-            dis.setText(readText(this,R.raw.my));
+            question tempt= new question();
+            question ret = tempt.readfile(this);
+
+            dis.setText(ret.toString());
         } catch(Exception e)  {
             dis.setText(e.getMessage());
             e.printStackTrace();
