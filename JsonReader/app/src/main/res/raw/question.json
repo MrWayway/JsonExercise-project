@@ -1,0 +1,17 @@
+{
+ "questions": [
+  	 {"head":"How many",
+ "tail":"are there ?",
+ "type":"ADD_OBJECTS"
+
+},
+{"head":"Count the ",
+ "tail":"Which group has one more ?",
+ "type":"ONEMORE"
+
+},
+{"head":"Count the",
+ "tail":"Which group has one less ?",
+ "type":"ONELESS"
+}
+]}
