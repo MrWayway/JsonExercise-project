@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public void runExample(View view)  {
         try {
             // Đọc file: res/raw/company.json và trả về đối tượng Company.
-            QuestionType questiontype = ReadJSONExample.readCompanyJSONFile(this);
+            QuestionTypeList questiontype = new QuestionTypeList (ReadJSONExample.readQuestionJSONFile (this));
             a.setText(questiontype.toString());
 
         } catch(Exception e)  {

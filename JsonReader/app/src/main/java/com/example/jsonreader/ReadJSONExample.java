@@ -2,10 +2,6 @@ package com.example.jsonreader;
 
 import android.content.Context;
 
-import com.example.jsonreader.Address1;
-import com.example.jsonreader.Company;
-import com.example.jsonreader.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,7 +15,7 @@ import java.io.InputStreamReader;
 public class ReadJSONExample {
 
     // Đọc file company.json và chuyển thành đối tượng java.
-    public static QuestionType readCompanyJSONFile(Context context) throws IOException, JSONException {
+    public static QuestionType[] readQuestionJSONFile(Context context) throws IOException, JSONException {
 
         // Đọc nội dung text của file Question
         String jsonText = readText(context, R.raw.question);
@@ -34,22 +30,23 @@ public class ReadJSONExample {
         for(int i=0;i < jsonArray.length();i++) {
             questionTypeList[i] = jsonArray.getString(i);
         }
+        QuestionType[] ret = new QuestionType[jsonArray.length()];
+        JSONObject tempt;
+        for(int i=0;i<jsonArray.length ();i++){
+        tempt = new JSONObject (questionTypeList[i]);
 
-        JSONObject first = new JSONObject (questionTypeList[0]);
+        String head= tempt.getString("head");
+        String tail= tempt.getString("tail");
+        String type= tempt.getString("type");
 
-        String head= first.getString("head");
-        String tail= first.getString("tail");
-        String type= first.getString("type");
-
-        QuestionType questiontype = new QuestionType ();
-        questiontype.setHead(head);
-        questiontype.setType(type);
-        questiontype.setTail(tail);
+        ret[i] = new QuestionType ();
+        ret[i].set(head,tail,type);}
 
 
 
-        return questiontype;
+        return ret;
     }
+
 
 
     // Đọc nội dung text của một file nguồn.

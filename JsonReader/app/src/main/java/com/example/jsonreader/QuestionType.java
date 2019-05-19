@@ -24,6 +24,11 @@ public class QuestionType {
     public void setTail(String tail) {
         this.Tail = tail;
     }
+    public void set(String head,String tail,String Type){
+        this.Head=head;
+        this.Tail=tail;
+        this.Type=Type;
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
